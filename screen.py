@@ -19,6 +19,7 @@ class SpaceGameWindow(arcade.Window):
         self.man.draw()
 
     def on_key_press(self, key, key_modifiers):
+        self.cal.update_result()
         self.cal.on_key_press(key, key_modifiers)
     #     if key == arcade.key.A:
     #         self.man = arcade.Sprite('images/cha1.png')
