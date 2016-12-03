@@ -24,43 +24,22 @@ class cal:
             print(self.score_chai, self.score_pa)
 
     def update_result(self):
-        if self.ans_chai == 1 and self.ans_pa == 1:
-            self.ans_chai = 0
-            self.ans_pa = 0
-            print('draw')
-        elif self.ans_chai == 2 and self.ans_pa == 2:
-            self.ans_chai = 0
-            self.ans_pa = 0
-            print('draw')
-        elif self.ans_chai == 3 and self.ans_pa == 3:
-            self.ans_chai = 0
-            self.ans_pa = 0
-            print('draw')
         #scissor = 1, rock = 2, paper = 3
-        elif self.ans_chai == 1 and self.ans_pa == 2:
-            self.ans_chai = 0
-            self.ans_pa = 0
+        if self.ans_chai == 1 and self.ans_pa == 2:
             self.score_pa += 1
         elif self.ans_chai == 1 and self.ans_pa == 3:
-            self.ans_chai = 0
-            self.ans_pa = 0
             self.score_chai += 1
         elif self.ans_chai == 2 and self.ans_pa == 1:
-            self.ans_chai = 0
-            self.ans_pa = 0
             self.score_chai += 1
         elif self.ans_chai == 2 and self.ans_pa == 3:
-            self.ans_chai = 0
-            self.ans_pa = 0
             self.score_pa += 1
         elif self.ans_chai == 3 and self.ans_pa == 1:
-            self.ans_chai = 0
-            self.ans_pa = 0
             self.score_pa += 1
         elif self.ans_chai == 3 and self.ans_pa == 2:
+            self.score_chai += 1
+        if self.ans_chai != 0 and self.ans_pa != 0:
             self.ans_chai = 0
             self.ans_pa = 0
-            self.score_chai += 1
 
     def chai(self):
         if self.score_chai - self.score_pa == -3:
@@ -79,7 +58,7 @@ class cal:
             self.people_chai = arcade.Sprite('images/cha3.png')
         elif self.score_chai - self.score_pa == 4:
             self.people_chai = arcade.Sprite('images/cha4.png')
-        self.people_chai.set_position(100, 100)
+        self.people_chai.set_position(300, 100)
         self.people_chai.draw()
 
     def pa(self):
@@ -99,6 +78,6 @@ class cal:
             self.people_pa = arcade.Sprite('images/pa3.png')
         elif self.score_pa - self.score_chai == 4:
             self.people_pa = arcade.Sprite('images/pa4.png')
-        self.people_pa.set_position(900, 100)
+        self.people_pa.set_position(700, 100)
         self.people_pa.draw()
 

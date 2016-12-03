@@ -9,15 +9,17 @@ SCREEN_HEIGHT = 500
 class SpaceGameWindow(arcade.Window):
     def __init__(self, width, height):
         super().__init__(width, height)
-        arcade.set_background_color(arcade.color.BLACK)
+        self.bg = arcade.Sprite('images/background.png')
+        self.bg.set_position(500,250)
         self.cal = cal()
 
     def on_draw(self):
         arcade.start_render()
+        self.bg.draw()
         self.cal.chai()
         self.cal.pa()
-        arcade.draw_text(str(self.cal.score_chai), 30, self.height - 30, arcade.color.WHITE, 20)
-        arcade.draw_text(str(self.cal.score_pa), self.width - 30, self.height - 30, arcade.color.WHITE, 20)
+        arcade.draw_text(str(self.cal.score_chai), 30, self.height - 30, arcade.color.BLACK, 20)
+        arcade.draw_text(str(self.cal.score_pa), self.width - 30, self.height - 30, arcade.color.BLACK, 20)
 
     def on_key_press(self, key, key_modifiers):
         self.cal.update_result()
