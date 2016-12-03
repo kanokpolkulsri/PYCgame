@@ -1,5 +1,5 @@
 import arcade
-import arcade.key
+import arcade.sound
 from calculate import cal
 
 SCREEN_WIDTH = 1000
@@ -12,6 +12,11 @@ class SpaceGameWindow(arcade.Window):
         # arcade.set_background_color('images/background.png')
         self.bg = arcade.Sprite('images/background.png')
         self.bg.set_position(500,250)
+        # cannot debug how to add sounds?
+        # arcade.load_sound_library()
+        # self.a = arcade.load_sound('sounds/bgSound.mp3')
+        # arcade.play_sound(self.a)
+
         self.cal = cal()
 
     def on_draw(self):
