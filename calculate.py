@@ -63,30 +63,42 @@ class cal:
             self.score_chai += 1
 
     def chai(self):
-        if self.score_chai - self.score_pa == 1:
+        if self.score_chai - self.score_pa == -3:
+            self.people_chai = arcade.Sprite('images/cha-3.png')
+        elif self.score_chai - self.score_pa == -2:
+            self.people_chai = arcade.Sprite('images/cha-2.png')
+        elif self.score_chai - self.score_pa == -1:
+            self.people_chai = arcade.Sprite('images/cha-1.png')
+        elif self.score_chai - self.score_pa == 0:
+            self.people_chai = arcade.Sprite('images/cha0.png')
+        elif self.score_chai - self.score_pa == 1:
+            self.people_chai = arcade.Sprite('images/cha1.png')
+        elif self.score_chai - self.score_pa == 2:
             self.people_chai = arcade.Sprite('images/cha2.png')
-        if self.score_chai - self.score_pa == 2:
+        elif self.score_chai - self.score_pa == 3:
+            self.people_chai = arcade.Sprite('images/cha3.png')
+        elif self.score_chai - self.score_pa == 4:
             self.people_chai = arcade.Sprite('images/cha4.png')
-        if self.score_chai - self.score_pa == 3:
-            self.people_chai = arcade.Sprite('images/cha4.png')
-        if self.score_chai - self.score_pa == 4:
-            self.people_chai = arcade.Sprite('images/cha5.png')
-        if self.score_chai - self.score_pa == 5:
-            self.people_chai = arcade.Sprite('images/cha5.png')
         self.people_chai.set_position(100, 100)
         self.people_chai.draw()
 
     def pa(self):
-        if self.score_pa - self.score_chai == 1:
+        if self.score_pa - self.score_chai == -3:
+            self.people_pa = arcade.Sprite('images/pa-3.png')
+        elif self.score_pa - self.score_chai == -2:
+            self.people_pa = arcade.Sprite('images/pa-2.png')
+        elif self.score_pa - self.score_chai == -1:
+            self.people_pa = arcade.Sprite('images/pa-1.png')
+        elif self.score_pa - self.score_chai == 0:
+            self.people_pa = arcade.Sprite('images/pa0.png')
+        elif self.score_pa - self.score_chai == 1:
+            self.people_pa = arcade.Sprite('images/pa1.png')
+        elif self.score_pa - self.score_chai == 2:
             self.people_pa = arcade.Sprite('images/pa2.png')
-        if self.score_pa - self.score_chai == 2:
+        elif self.score_pa - self.score_chai == 3:
+            self.people_pa = arcade.Sprite('images/pa3.png')
+        elif self.score_pa - self.score_chai == 4:
             self.people_pa = arcade.Sprite('images/pa4.png')
-        if self.score_pa - self.score_chai == 3:
-            self.people_pa = arcade.Sprite('images/pa4.png')
-        if self.score_pa - self.score_chai == 4:
-            self.people_pa = arcade.Sprite('images/pa5.png')
-        if self.score_pa - self.score_chai == 5:
-            self.people_pa = arcade.Sprite('images/pa5.png')
         self.people_pa.set_position(900, 100)
         self.people_pa.draw()
 
