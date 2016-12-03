@@ -19,6 +19,7 @@ class SpaceGameWindow(arcade.Window):
         self.bg.draw()
         self.cal.chai()
         self.cal.pa()
+        self.cal.show_result()
         arcade.draw_text(str(self.cal.score_chai), 95, 50, arcade.color.GRAY, 20)
         arcade.draw_text(str(self.cal.score_pa), 900, 50, arcade.color.GRAY, 20)
 

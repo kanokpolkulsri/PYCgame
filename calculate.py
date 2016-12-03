@@ -6,6 +6,7 @@ class cal:
     score_pa = 0
     people_chai = arcade.Sprite('images/cha2.png')
     people_pa = arcade.Sprite('images/pa2.png')
+    game_finish = False
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
@@ -24,22 +25,25 @@ class cal:
             print(self.score_chai, self.score_pa)
 
     def update_result(self):
-        #scissor = 1, rock = 2, paper = 3
-        if self.ans_chai == 1 and self.ans_pa == 2:
-            self.score_pa += 1
-        elif self.ans_chai == 1 and self.ans_pa == 3:
-            self.score_chai += 1
-        elif self.ans_chai == 2 and self.ans_pa == 1:
-            self.score_chai += 1
-        elif self.ans_chai == 2 and self.ans_pa == 3:
-            self.score_pa += 1
-        elif self.ans_chai == 3 and self.ans_pa == 1:
-            self.score_pa += 1
-        elif self.ans_chai == 3 and self.ans_pa == 2:
-            self.score_chai += 1
-        if self.ans_chai != 0 and self.ans_pa != 0:
-            self.ans_chai = 0
-            self.ans_pa = 0
+        if self.game_finish == False:
+            #scissor = 1, rock = 2, paper = 3
+            if self.ans_chai == 1 and self.ans_pa == 2:
+                self.score_pa += 1
+            elif self.ans_chai == 1 and self.ans_pa == 3:
+                self.score_chai += 1
+            elif self.ans_chai == 2 and self.ans_pa == 1:
+                self.score_chai += 1
+            elif self.ans_chai == 2 and self.ans_pa == 3:
+                self.score_pa += 1
+            elif self.ans_chai == 3 and self.ans_pa == 1:
+                self.score_pa += 1
+            elif self.ans_chai == 3 and self.ans_pa == 2:
+                self.score_chai += 1
+            if self.ans_chai != 0 and self.ans_pa != 0:
+                self.ans_chai = 0
+                self.ans_pa = 0
+        if self.score_chai == 5 or self.score_pa == 5:
+            self.game_finish = True
 
     def chai(self):
         if self.score_chai - self.score_pa == -3:
@@ -81,3 +85,18 @@ class cal:
         self.people_pa.set_position(700, 150)
         self.people_pa.draw()
 
+    def show_result(self):
+        if self.game_finish == True and self.score_chai == 5:
+            self.result_chai = arcade.Sprite('images/win.png')
+            self.result_chai.set_position(300, 400)
+            self.result_chai.draw()
+            self.result_pa = arcade.Sprite('images/lose.png')
+            self.result_pa.set_position(700, 400)
+            self.result_pa.draw()
+        elif self.game_finish == True:
+            self.result_chai = arcade.Sprite('images/lose.png')
+            self.result_chai.set_position(300, 400)
+            self.result_chai.draw()
+            self.result_pa = arcade.Sprite('images/win.png')
+            self.result_pa.set_position(700, 400)
+            self.result_pa.draw()
