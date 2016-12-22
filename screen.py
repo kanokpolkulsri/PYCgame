@@ -26,6 +26,7 @@ class SpaceGameWindow(arcade.Window):
 
     def on_key_press(self, key, key_modifiers):
         # self.cal.update_result()
+        # self.cal.on_key_press(key, key_modifiers)
         self.button.on_key_press(key, key_modifiers)
 
 if __name__ == '__main__':
