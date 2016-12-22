@@ -3,22 +3,24 @@ from random import randint
 
 class allAboutScore:
 
-    button_1 = 3
-    button_2 = 2
-    button_3 = 1
+    def __init__(self, screen):
+        self.screen = screen
+        self.button_1 = 3
+        self.button_2 = 2
+        self.button_3 = 1
 
-    player_left_1 = 0
-    player_left_2 = 0
-    player_left_3 = 0
+        self.player_left_1 = 0
+        self.player_left_2 = 0
+        self.player_left_3 = 0
 
-    player_right_1 = 0
-    player_right_2 = 0
-    player_right_3 = 0
+        self.player_right_1 = 0
+        self.player_right_2 = 0
+        self.player_right_3 = 0
 
-    score_left = 0
-    score_right = 0
+        self.score_left = 0
+        self.score_right = 0
 
-    canplay = True
+        self.canplay = True
 
     def on_key_press(self, key, key_modifiers):
 
@@ -78,15 +80,24 @@ class allAboutScore:
             print('left = ', self.score_left, ' , Right = ', self.score_right)
             print(self.button_1, self.button_2, self.button_3)
 
-    def draw_score(self):
-        arcade.draw_text(str(self.button_1), 360, 320, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.button_2), 480, 320, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.button_3), 600, 320, arcade.color.GRAY, 20)
+    # def draw_score(self):
+    #     if self.canplay == True:
+    #         arcade.draw_text(str(self.button_1), 360, 320, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.button_2), 480, 320, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.button_3), 600, 320, arcade.color.GRAY, 20)
+    #
+    #         arcade.draw_text(str(self.player_left_1), 250, 50, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.player_left_2), 300, 50, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.player_left_3), 350, 50, arcade.color.GRAY, 20)
+    #
+    #         arcade.draw_text(str(self.player_right_1), 650, 50, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.player_right_2), 700, 50, arcade.color.GRAY, 20)
+    #         arcade.draw_text(str(self.player_right_3), 750, 50, arcade.color.GRAY, 20)
 
-        arcade.draw_text(str(self.player_left_1), 250, 50, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.player_left_2), 300, 50, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.player_left_3), 350, 50, arcade.color.GRAY, 20)
+    # def draw_cover_score(self):
+    #     if self.canplay == False:
+    #         self.cover = arcade.Sprite('images/cover.png')
+    #         self.cover.set_position(500, 250)
+    #         self.cover.draw()
 
-        arcade.draw_text(str(self.player_right_1), 650, 50, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.player_right_2), 700, 50, arcade.color.GRAY, 20)
-        arcade.draw_text(str(self.player_right_3), 750, 50, arcade.color.GRAY, 20)
+

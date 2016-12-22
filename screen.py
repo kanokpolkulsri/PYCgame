@@ -1,6 +1,6 @@
 import arcade
 from calculation import allAboutScore
-from drawing import render
+from decoration import render
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
@@ -9,16 +9,17 @@ SCREEN_HEIGHT = 500
 class SpaceGameWindow(arcade.Window):
     def __init__(self, width, height):
         super().__init__(width, height)
-        self.button = allAboutScore()
-        self.render = render()
+        self.score = allAboutScore(self)
+        self.render = render(self)
 
     def on_draw(self):
         arcade.start_render()
         self.render.screen_draw()
-        self.button.draw_score()
+        self.render.draw_score()
+        # self.button.draw_cover_score()
 
     def on_key_press(self, key, key_modifiers):
-        self.button.on_key_press(key, key_modifiers)
+        self.score.on_key_press(key, key_modifiers)
 
 if __name__ == '__main__':
     window = SpaceGameWindow(SCREEN_WIDTH, SCREEN_HEIGHT)
