@@ -87,4 +87,5 @@ class button:
 
 class score(button):
     def print_score(self):
-            print('left = ', self.score_left , ' , Right = ', self.score_right)
+        print('left = ', self.score_left , ' , Right = ', self.score_right)
+
