@@ -5,8 +5,8 @@ class allAboutScore:
 
     def __init__(self, screen):
         self.screen = screen
-        self.button_1 = 3
-        self.button_2 = 2
+        self.button_1 = 1
+        self.button_2 = 1
         self.button_3 = 1
         self.player_left_1 = 0
         self.player_left_2 = 0
@@ -14,7 +14,7 @@ class allAboutScore:
         self.player_right_1 = 0
         self.player_right_2 = 0
         self.player_right_3 = 0
-        self.score_left = 0
+        self.score_left = -1
         self.score_right = 0
         self.canplay = True
 

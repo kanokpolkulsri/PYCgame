@@ -16,6 +16,10 @@ class render:
         self.cover.set_position(500,250)
         self.podium = arcade.Sprite('images/podium.png')
         self.podium.set_position(500, 250)
+        self.chaForPodium = arcade.Sprite('images/chaForPodium.png')
+        self.chaForPodium.set_position(270,40)
+        self.paForPodium = arcade.Sprite('images/paForPodium.png')
+        self.paForPodium.set_position(730, 40)
 
     def screen_draw(self):
         self.bg.draw()
@@ -41,3 +45,5 @@ class render:
         if self.screen.score.canplay == False:
             self.cover.draw()
             self.podium.draw()
+            self.chaForPodium.draw()
+            self.paForPodium.draw()
