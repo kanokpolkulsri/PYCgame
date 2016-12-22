@@ -16,16 +16,21 @@ class render:
         self.cover.set_position(500,250)
         self.podium = arcade.Sprite('images/podium.png')
         self.podium.set_position(500, 250)
-        self.chaForPodium = arcade.Sprite('images/chaForPodium.png')
-        self.chaForPodium.set_position(270,40)
-        self.paForPodium = arcade.Sprite('images/paForPodium.png')
-        self.paForPodium.set_position(730, 40)
+        self.cha_podium = arcade.Sprite('images/chaForPodium.png')
+        self.cha_podium.set_position(270, 40)
+        self.pa_podium = arcade.Sprite('images/paForPodium.png')
+        self.pa_podium.set_position(730, 40)
+        self.score_left_0 = arcade.Sprite('images/score0.png')
+        self.score_left_0.set_position(200,300)
+        self.score_right_0 = arcade.Sprite('images/score0.png')
+        self.score_right_0.set_position(800, 300)
 
     def screen_draw(self):
         self.bg.draw()
         self.prs.draw()
         self.left.draw()
         self.right.draw()
+        self.change_position_podium()
 
     def draw_score(self):
         if self.screen.score.canplay == True:
@@ -45,5 +50,25 @@ class render:
         if self.screen.score.canplay == False:
             self.cover.draw()
             self.podium.draw()
-            self.chaForPodium.draw()
-            self.paForPodium.draw()
+            self.cha_podium.draw()
+            self.pa_podium.draw()
+            self.score_left_0.draw()
+
+    def change_position_podium(self):
+        if self.screen.score.score_left == 0:
+            self.cha_podium.set_position(270, 40)
+        elif self.screen.score.score_left == 1:
+            self.cha_podium.set_position(340, 90)
+        elif self.screen.score.score_left == 2:
+            self.cha_podium.set_position(415, 130)
+        elif self.screen.score.score_left == 3:
+            self.cha_podium.set_position(500, 180)
+
+        if self.screen.score.score_right == 0:
+            self.pa_podium.set_position(730, 40)
+        elif self.screen.score.score_right == 1:
+            self.pa_podium.set_position(650, 90)
+        elif self.screen.score.score_right == 2:
+            self.pa_podium.set_position(575, 130)
+        elif self.screen.score.score_right == 3:
+            self.pa_podium.set_position(500, 175)
