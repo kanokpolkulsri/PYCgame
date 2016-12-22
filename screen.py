@@ -9,14 +9,8 @@ SCREEN_HEIGHT = 500
 class SpaceGameWindow(arcade.Window):
     def __init__(self, width, height):
         super().__init__(width, height)
-        # arcade.set_background_color('images/background.png')
         self.bg = arcade.Sprite('images/background.png')
         self.bg.set_position(500,250)
-        # cannot debug how to add sounds?
-        # arcade.load_sound_library()
-        # self.a = arcade.load_sound('sounds/bgSound.mp3')
-        # arcade.play_sound(self.a)
-
         self.cal = cal()
 
     def on_draw(self):
