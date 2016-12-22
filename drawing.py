@@ -1,5 +1,5 @@
 import arcade
-from calculation import score
+from calculation import score, scoreWithButton
 
 class render:
 
@@ -23,3 +23,8 @@ class render:
         self.prs.draw()
         self.left.draw()
         self.right.draw()
+
+class typeText(scoreWithButton):
+
+    def type_score(self):
+        arcade.draw_text(str(self.score_left), 95, 50, arcade.color.GRAY, 20)
