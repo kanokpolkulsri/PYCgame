@@ -1,7 +1,7 @@
 import arcade
 import arcade.sound
 # from calculate import cal
-from calculation import button, score
+from calculation import scoreWithButton, score
 from drawing import render
 
 SCREEN_WIDTH = 1000
@@ -11,7 +11,7 @@ SCREEN_HEIGHT = 500
 class SpaceGameWindow(arcade.Window):
     def __init__(self, width, height):
         super().__init__(width, height)
-        self.button = button()
+        self.button = scoreWithButton()
         self.score = score()
         self.render = render()
         #self.cal = cal()

@@ -9,10 +9,11 @@ class render:
         self.prs = arcade.Sprite('images/prs.png')
         self.prs.set_position(500, 250)
 
-        self.left = arcade.Sprite('images/cha1.png')
+        self.left = arcade.Sprite('images/cha0.png')
         self.left.set_position(100,100)
 
-        
+        self.right = arcade.Sprite('images/pa0.png')
+        self.right.set_position(900, 100)
 
     def print(self):
         print(score.score_left)
@@ -21,3 +22,4 @@ class render:
         self.bg.draw()
         self.prs.draw()
         self.left.draw()
+        self.right.draw()

@@ -1,7 +1,7 @@
 import arcade
 from random import randint
 
-class button:
+class scoreWithButton:
 
     button_1 = 3
     button_2 = 2
@@ -85,7 +85,7 @@ class button:
             print(self.button_1, self.button_2, self.button_3)
 
 
-class score(button):
+class score(scoreWithButton):
     def print_score(self):
         print('left = ', self.score_left , ' , Right = ', self.score_right)
 
