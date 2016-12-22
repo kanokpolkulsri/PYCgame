@@ -1,7 +1,7 @@
 import arcade
 from random import randint
 
-class scoreWithButton:
+class allAboutScore:
 
     button_1 = 3
     button_2 = 2
@@ -41,12 +41,6 @@ class scoreWithButton:
             if self.player_left_1 == self.button_1 and self.player_left_2 == self.button_2 and self.player_left_3 == self.button_3:
                 print('spacebar')
                 self.score_left += 1
-                self.player_left_1 = 0
-                self.player_left_2 = 0
-                self.player_left_3 = 0
-                self.player_right_1 = 0
-                self.player_right_2 = 0
-                self.player_right_3 = 0
                 self.canplay = False
 
         if (self.player_right_1 != self.button_1 or self.player_right_2 != self.button_2 or self.player_right_3 != self.button_3) and self.canplay == True:
@@ -68,12 +62,6 @@ class scoreWithButton:
             if self.player_right_1 == self.button_1 and self.player_right_2 == self.button_2 and self.player_right_3 == self.button_3:
                 print('spacebar')
                 self.score_right += 1
-                self.player_left_1 = 0
-                self.player_left_2 = 0
-                self.player_left_3 = 0
-                self.player_right_1 = 0
-                self.player_right_2 = 0
-                self.player_right_3 = 0
                 self.canplay = False
 
         if self.canplay == False and key == arcade.key.SPACE:
@@ -81,11 +69,24 @@ class scoreWithButton:
             self.button_1 = randint(1, 10)
             self.button_2 = randint(1, 10)
             self.button_3 = randint(1, 10)
-            score.print_score(self)
+            self.player_left_1 = 0
+            self.player_left_2 = 0
+            self.player_left_3 = 0
+            self.player_right_1 = 0
+            self.player_right_2 = 0
+            self.player_right_3 = 0
+            print('left = ', self.score_left, ' , Right = ', self.score_right)
             print(self.button_1, self.button_2, self.button_3)
 
+    def draw_score(self):
+        arcade.draw_text(str(self.button_1), 360, 320, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.button_2), 480, 320, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.button_3), 600, 320, arcade.color.GRAY, 20)
 
-class score(scoreWithButton):
-    def print_score(self):
-        print('left = ', self.score_left , ' , Right = ', self.score_right)
+        arcade.draw_text(str(self.player_left_1), 250, 50, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.player_left_2), 300, 50, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.player_left_3), 350, 50, arcade.color.GRAY, 20)
 
+        arcade.draw_text(str(self.player_right_1), 650, 50, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.player_right_2), 700, 50, arcade.color.GRAY, 20)
+        arcade.draw_text(str(self.player_right_3), 750, 50, arcade.color.GRAY, 20)

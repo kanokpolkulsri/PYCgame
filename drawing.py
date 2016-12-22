@@ -1,7 +1,6 @@
 import arcade
-from calculation import score, scoreWithButton
-
-class render:
+from calculation import allAboutScore
+class render(allAboutScore):
 
     def __init__(self):
         self.bg = arcade.Sprite('images/bg.psd')
@@ -15,16 +14,11 @@ class render:
         self.right = arcade.Sprite('images/pa0.png')
         self.right.set_position(900, 100)
 
-    def print(self):
-        print(score.score_left)
-
     def screen_draw(self):
         self.bg.draw()
         self.prs.draw()
         self.left.draw()
         self.right.draw()
+        # print(self.score_left)
 
-class typeText(scoreWithButton):
 
-    def type_score(self):
-        arcade.draw_text(str(self.score_left), 95, 50, arcade.color.GRAY, 20)
