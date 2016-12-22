@@ -14,15 +14,27 @@ class button:
         if self.player_left_1 != self.button_1 or self.player_left_2 != self.button_2 or self.player_left_3 != self.button_3:
             if key == arcade.key.A:
                 self.player_left_1 += 1
+                if self.player_left_1 > self.button_1:
+                    self.player_left_1 = 0
                 print(self.player_left_1, self.player_left_2, self.player_left_3)
             elif key == arcade.key.S:
+                if self.player_left_2 > self.button_2:
+                    self.player_left_2 = 0
                 self.player_left_2 += 1
                 print(self.player_left_1, self.player_left_2, self.player_left_3)
             elif key == arcade.key.D:
+                if self.player_left_3 > self.button_3:
+                    self.player_left_3 = 0
                 self.player_left_3 += 1
                 print(self.player_left_1, self.player_left_2, self.player_left_3)
             if self.player_left_1 == self.button_1 and self.player_left_2 == self.button_2 and self.player_left_3 == self.button_3:
                 print('spacebar')
+                self.player_left_1 = 0
+                self.player_left_2 = 0
+                self.player_left_3 = 0
+                self.button_1 = 1
+                self.button_2 = 2
+                self.button_3 = 3
 
         if key == arcade.key.J:
             print('1')
