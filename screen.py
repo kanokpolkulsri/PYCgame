@@ -1,7 +1,7 @@
 import arcade
 import arcade.sound
 # from calculate import cal
-from calculation import button
+from calculation import button, score
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
@@ -13,6 +13,7 @@ class SpaceGameWindow(arcade.Window):
         self.bg = arcade.Sprite('images/bg.psd')
         self.bg.set_position(500,250)
         self.button = button()
+        self.score = score()
         #self.cal = cal()
 
     def on_draw(self):
@@ -28,6 +29,7 @@ class SpaceGameWindow(arcade.Window):
         # self.cal.update_result()
         # self.cal.on_key_press(key, key_modifiers)
         self.button.on_key_press(key, key_modifiers)
+        self.score.print()
 
 if __name__ == '__main__':
     window = SpaceGameWindow(SCREEN_WIDTH, SCREEN_HEIGHT)
