@@ -8,12 +8,14 @@ class render:
         self.bg.set_position(500, 250)
         self.prs = arcade.Sprite('images/prs.png')
         self.prs.set_position(500, 250)
-
         self.left = arcade.Sprite('images/cha0.png')
         self.left.set_position(100,100)
-
         self.right = arcade.Sprite('images/pa0.png')
         self.right.set_position(900, 100)
+        self.cover = arcade.Sprite('images/cover.png')
+        self.cover.set_position(500,250)
+        self.podium = arcade.Sprite('images/podium.png')
+        self.podium.set_position(500, 250)
 
     def screen_draw(self):
         self.bg.draw()
@@ -35,4 +37,7 @@ class render:
             arcade.draw_text(str(self.screen.score.player_right_2), 700, 50, arcade.color.GRAY, 20)
             arcade.draw_text(str(self.screen.score.player_right_3), 750, 50, arcade.color.GRAY, 20)
 
-
+    def draw_cover(self):
+        if self.screen.score.canplay == False:
+            self.cover.draw()
+            self.podium.draw()

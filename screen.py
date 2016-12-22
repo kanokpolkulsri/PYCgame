@@ -16,7 +16,7 @@ class SpaceGameWindow(arcade.Window):
         arcade.start_render()
         self.render.screen_draw()
         self.render.draw_score()
-        # self.button.draw_cover_score()
+        self.render.draw_cover()
 
     def on_key_press(self, key, key_modifiers):
         self.score.on_key_press(key, key_modifiers)
