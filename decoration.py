@@ -21,9 +21,15 @@ class render:
         self.pa_podium = arcade.Sprite('images/paForPodium.png')
         self.pa_podium.set_position(730, 40)
         self.score_left_0 = arcade.Sprite('images/score0.png')
-        self.score_left_0.set_position(200,300)
         self.score_right_0 = arcade.Sprite('images/score0.png')
-        self.score_right_0.set_position(800, 300)
+        self.score_left_1 = arcade.Sprite('images/score1.png')
+        self.score_right_1 = arcade.Sprite('images/score1.png')
+        self.score_left_2 = arcade.Sprite('images/score2.png')
+        self.score_right_2 = arcade.Sprite('images/score2.png')
+        self.score_left_3 = arcade.Sprite('images/score3.png')
+        self.score_right_3 = arcade.Sprite('images/score3.png')
+        self.spacebar = arcade.Sprite('images/spacebar.png')
+        self.spacebar.set_position(500,280)
 
     def screen_draw(self):
         self.bg.draw()
@@ -52,7 +58,8 @@ class render:
             self.podium.draw()
             self.cha_podium.draw()
             self.pa_podium.draw()
-            self.score_left_0.draw()
+            self.spacebar.draw()
+            self.change_big_score()
 
     def change_position_podium(self):
         if self.screen.score.score_left == 0:
@@ -72,3 +79,30 @@ class render:
             self.pa_podium.set_position(575, 130)
         elif self.screen.score.score_right == 3:
             self.pa_podium.set_position(500, 175)
+
+    def change_big_score(self):
+        if self.screen.score.score_left == 0:
+            self.score_left_0.set_position(200, 300)
+            self.score_left_0.draw()
+        elif self.screen.score.score_left == 1:
+            self.score_left_1.set_position(200, 300)
+            self.score_left_1.draw()
+        elif self.screen.score.score_left == 2:
+            self.score_left_2.set_position(200, 300)
+            self.score_left_2.draw()
+        elif self.screen.score.score_left == 3:
+            self.score_left_3.set_position(200, 300)
+            self.score_left_3.draw()
+
+        if self.screen.score.score_right == 0:
+            self.score_right_0.set_position(800, 300)
+            self.score_right_0.draw()
+        if self.screen.score.score_right == 1:
+            self.score_right_1.set_position(800, 300)
+            self.score_right_1.draw()
+        elif self.screen.score.score_right == 2:
+            self.score_right_2.set_position(800, 300)
+            self.score_right_2.draw()
+        elif self.screen.score.score_right == 3:
+            self.score_right_3.set_position(800, 300)
+            self.score_right_3.draw()

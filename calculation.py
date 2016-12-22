@@ -53,7 +53,10 @@ class allAboutScore:
                 self.score_right += 1
                 self.canplay = False
 
-        if self.canplay == False and key == arcade.key.SPACE:
+        if (self.score_left == 3 or self.score_right == 3) and key == arcade.key.SPACE:
+            self.score_left = 0
+            self.score_right = 0
+        elif self.canplay == False and key == arcade.key.SPACE:
             self.canplay = True
             self.button_1 = randint(1, 10)
             self.button_2 = randint(1, 10)
@@ -64,3 +67,5 @@ class allAboutScore:
             self.player_right_1 = 0
             self.player_right_2 = 0
             self.player_right_3 = 0
+
+
