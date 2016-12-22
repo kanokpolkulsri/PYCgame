@@ -29,7 +29,7 @@ class SpaceGameWindow(arcade.Window):
         # self.cal.update_result()
         # self.cal.on_key_press(key, key_modifiers)
         self.button.on_key_press(key, key_modifiers)
-        self.score.print()
+        # self.score.print_score()
 
 if __name__ == '__main__':
     window = SpaceGameWindow(SCREEN_WIDTH, SCREEN_HEIGHT)
