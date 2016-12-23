@@ -15,3 +15,5 @@ class sound:
         if (self.screen.score.score_left == 3 or self.screen.score.score_right == 3) and self.canplay == True:
             self.win.play()
             self.canplay = False
+        elif self.screen.score.score_left == 1 or self.screen.score.score_right == 1:
+            self.canplay = True
