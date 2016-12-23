@@ -1,4 +1,5 @@
 import arcade
+import arcade.sound
 from calculation import allAboutScore
 from decoration import render
 from interesting import sound
@@ -13,13 +14,13 @@ class SpaceGameWindow(arcade.Window):
         self.score = allAboutScore(self)
         self.render = render(self)
         self.sound = sound(self)
+        self.sound.play_bg_sound()
 
     def on_draw(self):
         arcade.start_render()
         self.render.screen_draw()
         self.render.draw_score()
         self.render.draw_cover()
-        self.sound.playing_sound()
 
     def on_key_press(self, key, key_modifiers):
         self.score.on_key_press(key, key_modifiers)

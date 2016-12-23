@@ -60,6 +60,7 @@ class render:
             self.pa_podium.draw()
             self.spacebar.draw()
             self.change_big_score()
+            self.screen.sound.play_game_sound()
 
     def change_position_podium(self):
         if self.screen.score.score_left == 0:

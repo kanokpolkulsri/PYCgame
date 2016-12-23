@@ -67,5 +67,3 @@ class allAboutScore:
             self.player_right_1 = 0
             self.player_right_2 = 0
             self.player_right_3 = 0
-
-
